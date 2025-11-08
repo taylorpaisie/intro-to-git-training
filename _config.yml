@@ -1,0 +1,38 @@
+title: Intro to Git Training
+description: Hands-on Git & GitHub workshop
+url: https://<your-username>.github.io
+baseurl: /intro-to-git-training
+
+# Use the excellent docs theme
+remote_theme: just-the-docs/just-the-docs
+
+# Required to use remote themes on GitHub Pages
+plugins:
+  - jekyll-remote-theme
+
+# Just the Docs options
+logo: /assets/img/logo.svg
+color_scheme: dark
+search_enabled: true
+aux_links:
+  "View on GitHub":
+    - "https://github.com/<your-username>/intro-to-git-training"
+
+# Navigation
+nav_external_links:
+  - title: Git Downloads
+    url: https://git-scm.com/downloads
+    hide_icon: false
+
+# Collections: lessons
+collections:
+  lessons:
+    output: true
+    permalink: /:collection/:name
+
+just_the_docs:
+  collections:
+    lessons:
+      name: Lessons
+      nav_exclude: false
+      sort_by: nav_order
