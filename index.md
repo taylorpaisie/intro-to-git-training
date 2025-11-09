@@ -22,8 +22,6 @@ Welcome! This site guides today’s hands-on Git workshop.
 6. Etiquette & Q&A
 
 
-
-
 ## Lessons
 {% assign lessons = site.lessons | sort: 'nav_order' %}
 <ul>
@@ -31,4 +29,5 @@ Welcome! This site guides today’s hands-on Git workshop.
   <li><a href="{{ l.url | relative_url }}">{{ l.title }}</a></li>
 {% endfor %}
 </ul>
+
 
