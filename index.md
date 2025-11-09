@@ -21,4 +21,14 @@ Welcome! This site guides today’s hands-on Git workshop.
 5. Merge conflicts (you’ll do one!)
 6. Etiquette & Q&A
 
-👉 Start with **[Lesson 1](/intro-to-git-training/lessons/01_intro/)**.
+
+
+
+## Lessons
+{% assign lessons = site.lessons | sort: 'nav_order' %}
+<ul>
+{% for l in lessons %}
+  <li><a href="{{ l.url | relative_url }}">{{ l.title }}</a></li>
+{% endfor %}
+</ul>
+
