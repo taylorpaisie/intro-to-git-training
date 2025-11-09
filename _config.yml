@@ -1,22 +1,26 @@
 title: Intro to Git Training
 description: Hands-on Git & GitHub workshop
-url: https://<your-username>.github.io
-baseurl: /intro-to-git-training
 
-# Use the excellent docs theme
+# GitHub Pages URLs (project site)
+url: "https://taylorpaisie.github.io"   # no trailing slash
+baseurl: "/intro-to-git-training"       # repo name, leading slash
+
+# Theme
 remote_theme: just-the-docs/just-the-docs
 
-# Required to use remote themes on GitHub Pages
+# GitHub Pages-required plugin for remote themes
 plugins:
   - jekyll-remote-theme
 
 # Just the Docs options
+# (Remove or update the logo path if you don't have this file yet)
 logo: /assets/img/logo.svg
 color_scheme: dark
 search_enabled: true
+
 aux_links:
   "View on GitHub":
-    - "https://github.com/<your-username>/intro-to-git-training"
+    - "https://github.com/taylorpaisie/intro-to-git-training"
 
 # Navigation
 nav_external_links:
