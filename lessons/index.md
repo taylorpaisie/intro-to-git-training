@@ -8,7 +8,7 @@ permalink: /lessons/
 
 # 📚 Lessons
 
-![Version Control]({{ '/images/phd101212s.png' | relative_url }})
+
 
 Welcome to the Intro to Git training! Work through the lessons below in order to build your Git skills.
 

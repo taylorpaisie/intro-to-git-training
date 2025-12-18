@@ -13,6 +13,8 @@ Welcome! This site guides today’s hands-on Git workshop.
 - Resolve a simple merge conflict  
 - Adopt good commit messages & review habits
 
+![Version Control]({{ '/images/phd101212s.png' | relative_url }})
+
 ## Agenda
 1. Why Git (version control in 10 minutes)
 2. Create a repository + first commit
