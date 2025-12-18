@@ -142,9 +142,3 @@ git commit -m "Add README"
 Continue to [Lesson 2 — Local Commits](02_local_commits.md) to practice staging, reviewing changes, and reading history.
 
 ---
-
-## Attribution / further reading
-
-This workshop’s flow is inspired by Software Carpentry’s Git Novice lesson. If you want a deeper self-paced version, it’s excellent:
-
-- https://swcarpentry.github.io/git-novice/
