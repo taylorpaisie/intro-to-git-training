@@ -1,16 +1,16 @@
 ---
 layout: default
-title: Lesson 5 — Branching & Pull Requests
+title: Lesson 5 — Branching & Merge Requests
 parent: Lessons
 nav_order: 5
 ---
 
-# Lesson 5 — Branching & Pull Requests
+# Lesson 5 — Branching & Merge Requests
 
 {: .highlight }
 > **⏱️ Estimated Time:** 25-30 minutes
 
-**Goal:** Use branches to isolate work, push a branch to GitHub, and open a pull request (PR).
+**Goal:** Use branches to isolate work, push a branch to GitLab, and open a merge request (MR).
 
 ---
 
@@ -19,8 +19,8 @@ nav_order: 5
 By the end of this lesson, you will be able to:
 - Create and switch branches
 - Make commits on a feature branch
-- Push a branch to GitHub
-- Open a pull request and understand the review/merge flow
+- Push a branch to GitLab
+- Open a merge request and understand the review/merge flow
 
 ---
 
@@ -29,7 +29,7 @@ By the end of this lesson, you will be able to:
 Branches let you:
 - keep `main` stable
 - work on a change without affecting others
-- collaborate via PRs and code review
+- collaborate via MRs and code review
 
 ---
 
@@ -85,11 +85,11 @@ git push -u origin add-agenda
 
 ---
 
-## Open a Pull Request (PR)
+## Open a Merge Request (MR)
 
-On GitHub:
-- You should see a prompt to “Compare & pull request”
-- Open a PR from `add-agenda` → `main`
+On GitLab:
+- In your project, go to **Merge requests** → **New merge request** (or use the prompt GitLab shows after pushing a branch)
+- Open an MR from `add-agenda` → `main`
 - Add a short description: what changed and why
 
 Review checklist (lightweight but effective):
@@ -97,13 +97,13 @@ Review checklist (lightweight but effective):
 - Are commit messages readable?
 - Is the scope small enough?
 
-Merge the PR (choose the merge strategy your team uses).
+Merge the MR (choose the merge strategy your team uses).
 
 ---
 
 ## Sync back to main
 
-After merging the PR on GitHub:
+After merging the MR on GitLab:
 
 ```bash
 git switch main
@@ -125,8 +125,8 @@ git push origin --delete add-agenda
 ## ✅ Lesson Checklist
 
 - [ ] You created a branch and made a commit on it
-- [ ] You pushed the branch to GitHub
-- [ ] You opened and merged a PR
+- [ ] You pushed the branch to GitLab
+- [ ] You opened and merged an MR
 - [ ] Your local `main` is up to date after `git pull`
 
 ---

@@ -1,5 +1,5 @@
 title: Intro to Git Training
-description: Hands-on Git & GitHub workshop
+description: Hands-on Git & GitLab workshop
 
 # GitHub Pages URLs (project site)
 url: "https://taylorpaisie.github.io"   # no trailing slash
@@ -19,7 +19,7 @@ color_scheme: dark
 search_enabled: true
 
 aux_links:
-  "View on GitHub":
+  "View this site source":
     - "https://github.com/taylorpaisie/intro-to-git-training"
 
 # Navigation

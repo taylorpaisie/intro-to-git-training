@@ -123,4 +123,4 @@ git rm --cached path/to/file
 
 ## 🎯 Next Steps
 
-Continue to Lesson 4 to connect your local repo to GitHub and start using remotes.
+Continue to Lesson 4 to connect your local repo to GitLab and start using remotes.

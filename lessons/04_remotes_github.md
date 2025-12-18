@@ -1,16 +1,16 @@
 ---
 layout: default
-title: Lesson 4 — Remotes (GitHub)
+title: Lesson 4 — Remotes (GitLab)
 parent: Lessons
 nav_order: 4
 ---
 
-# Lesson 4 — Remotes (GitHub)
+# Lesson 4 — Remotes (GitLab)
 
 {: .highlight }
 > **⏱️ Estimated Time:** 20-25 minutes
 
-**Goal:** Understand what a remote is, connect your local repository to GitHub, and practice `push`, `pull`, and `fetch`.
+**Goal:** Understand what a remote is, connect your local repository to GitLab, and practice `push`, `pull`, and `fetch`.
 
 ---
 
@@ -18,34 +18,40 @@ nav_order: 4
 
 By the end of this lesson, you will be able to:
 - Explain what a “remote” is
-- Add a GitHub remote called `origin`
-- Push your commits to GitHub
-- Pull changes from GitHub back to your laptop
+- Add a GitLab remote called `origin`
+- Push your commits to GitLab
+- Pull changes from GitLab back to your laptop
 
 ---
 
 ## Key idea: local vs remote
 
 - Your **local repository** is on your computer.
-- A **remote repository** is a copy hosted somewhere else (e.g., GitHub).
+- A **remote repository** is a copy hosted somewhere else (e.g., GitLab).
 
 Most workflows name the primary remote `origin` by convention.
 
 ---
 
-## Option A (recommended): Create a new GitHub repo and push
+## Option A (recommended): Create a new GitLab repo and push
 
-1. On GitHub, create a new repository named `training-notes`.
+1. In GitLab (gitlab.com or your company GitLab instance), create a new repository named `training-notes`.
    - Do **not** initialize with a README (you already have one locally).
 
-2. In your local `training-notes` folder, add the remote URL GitHub shows you:
+2. In your local `training-notes` folder, add the remote URL GitLab shows you:
 
 ```bash
-# HTTPS example
-# git remote add origin https://github.com/<org-or-user>/training-notes.git
+# HTTPS example (GitLab.com)
+# git remote add origin https://gitlab.com/<group-or-user>/training-notes.git
 
-# SSH example
-# git remote add origin git@github.com:<org-or-user>/training-notes.git
+# HTTPS example (self-managed GitLab)
+# git remote add origin https://gitlab.example.com/<group>/training-notes.git
+
+# SSH example (GitLab.com)
+# git remote add origin git@gitlab.com:<group-or-user>/training-notes.git
+
+# SSH example (self-managed GitLab)
+# git remote add origin git@gitlab.example.com:<group>/training-notes.git
 ```
 
 3. Verify the remote:
@@ -66,7 +72,7 @@ The `-u` sets an upstream so future pushes can be just `git push`.
 
 ## Option B: Clone an existing repo
 
-If the repository already exists on GitHub, clone it:
+If the repository already exists on GitLab, clone it:
 
 ```bash
 git clone <repo-url>
@@ -94,9 +100,9 @@ git log --oneline --graph --all
 
 ---
 
-## Practice: make a change on GitHub, then pull
+## Practice: make a change on GitLab, then pull
 
-1. On GitHub, edit `README.md` directly in the browser and commit the change.
+1. On GitLab, edit `README.md` directly in the browser and commit the change.
 2. Back on your computer:
 
 ```bash
@@ -109,11 +115,11 @@ git pull
 
 - [ ] You can explain what a remote is
 - [ ] `git remote -v` shows `origin`
-- [ ] You successfully pushed `main` to GitHub
-- [ ] You successfully pulled a change from GitHub
+- [ ] You successfully pushed `main` to GitLab
+- [ ] You successfully pulled a change from GitLab
 
 ---
 
 ## 🎯 Next Steps
 
-Continue to Lesson 5 to learn branching and pull requests.
+Continue to Lesson 5 to learn branching and merge requests.

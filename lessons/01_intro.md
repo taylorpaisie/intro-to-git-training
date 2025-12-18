@@ -24,12 +24,12 @@ By the end of this lesson, you will be able to:
 
 ---
 
-## What is Git (and what is GitHub)?
+## What is Git (and what is GitLab)?
 
 - **Git** is a version control tool that records changes over time.
-- **GitHub** is a hosting service for Git repositories (plus collaboration features like pull requests).
+- **GitLab** is a hosting service for Git repositories (plus collaboration features like merge requests).
 
-You can use Git entirely on your laptop. GitHub becomes relevant when you want to share, back up, or collaborate.
+You can use Git entirely on your laptop. GitLab becomes relevant when you want to share, back up, or collaborate.
 
 ---
 
@@ -60,7 +60,7 @@ Configure your identity (required for commits):
 # Set your name
 git config --global user.name "Your Name"
 
-# Set your email (use your GitHub email)
+# Set your email (use the email you use in GitLab)
 git config --global user.email "your.email@example.com"
 
 # Set your default branch name

@@ -146,4 +146,6 @@ git merge --abort
 
 At this point you can do the full basic workflow: commits → ignore → remotes → branches/PRs → conflicts.
 
+In GitLab, you’ll usually collaborate via merge requests (MRs) instead of pull requests (PRs).
+
 If you want, we can add an optional “collaboration workflow” lesson next (forks, reviews, and working with upstream).

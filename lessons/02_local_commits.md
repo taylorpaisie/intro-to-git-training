@@ -493,7 +493,7 @@ Before moving on, make sure you can:
 Great work! You now understand the fundamentals of Git commits.
 
 {: .highlight }
-> **Coming up:** In the next lesson, you'll learn how to work with remote repositories and collaborate with others using GitHub!
+> **Coming up:** In the next lesson, you'll learn how to work with remote repositories and collaborate with others using GitLab!
 
 ---
 

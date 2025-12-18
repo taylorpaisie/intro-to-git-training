@@ -23,8 +23,8 @@ parent: Lessons
 |-------------|---------|
 | 💻 **Admin Access** | Administrator rights to install software, or IT pre-approval |
 | 🌐 **Internet Connection** | Stable connection to download installers (~100 MB total) |
-| 👤 **GitHub Account** | [Create a free account](https://github.com/signup) if you don't have one |
-| 📧 **Work Email** | You'll use this for Git commits and GitHub |
+| 👤 **GitLab Account** | Use your company GitLab account, or create one on [gitlab.com](https://gitlab.com/users/sign_up) |
+| 📧 **Work Email** | You’ll use this for Git commits and GitLab |
 
 ---
 
@@ -104,7 +104,7 @@ After installing VS Code, enhance it with these Git-focused extensions:
 |-----------|---------|--------------|
 | **GitLens** | See who changed each line, compare branches, view history | [Install](vscode:extension/eamodio.gitlens) |
 | **Git Graph** | Visualize branches and commits in a graph | [Install](vscode:extension/mhutchie.git-graph) |
-| **GitHub Pull Requests** | Manage PRs directly in VS Code | [Install](vscode:extension/GitHub.vscode-pull-request-github) |
+| **GitLab Workflow** | Create/view merge requests and issues from VS Code | [Install](vscode:extension/gitlab.gitlab-workflow) |
 
 <details>
 <summary><strong>🎨 Optional: Additional helpful extensions</strong></summary>
@@ -171,12 +171,12 @@ Open **Git Bash** and run these commands (replace with your actual info):
 # Set your name (this will appear in your commits)
 git config --global user.name "Taylor Paisie"
 
-# Set your email (use the same email as your GitHub account)
+# Set your email (use the same email you use in GitLab)
 git config --global user.email "taylor.paisie@example.com"
 ```
 
 {: .important }
-> Use your **real name** and the **email associated with your GitHub account**. This is how your commits are attributed to you.
+> Use your **real name** and the **email associated with your GitLab account**. This is how your commits are attributed to you.
 
 ### ⚙️ Recommended Settings
 
@@ -225,9 +225,9 @@ pull.rebase=false
 
 ---
 
-## Step 5: Connect to GitHub
+## Step 5: Connect to GitLab
 
-You need to authenticate with GitHub to push and pull code. Choose the method that works best for your environment.
+You need to authenticate with GitLab to push and pull code. Choose the method that works best for your environment.
 
 ### 🔐 Option A: HTTPS with Credential Manager (Recommended)
 
@@ -237,17 +237,20 @@ You need to authenticate with GitHub to push and pull code. Choose the method th
 This is the easiest method and works well with corporate proxies and firewalls.
 
 **How it works:**
-1. The first time you `git push` or `git pull`, a browser window opens
-2. Sign in to your GitHub account
+1. The first time you `git push` or `git pull`, a browser window may open
+2. Sign in to your GitLab account
 3. Click **"Authorize"** to grant access
 4. Git Credential Manager stores your credentials securely
 5. Future operations work automatically!
 
 **Test it:**
 ```bash
-# Clone a test repository (this will trigger authentication)
-git clone https://github.com/octocat/Hello-World.git
-cd Hello-World
+# Clone a repository you have access to (this will trigger authentication)
+# Example (GitLab.com):
+# git clone https://gitlab.com/<group-or-user>/<project>.git
+
+# Example (self-managed GitLab):
+# git clone https://gitlab.example.com/<group>/<project>.git
 ```
 
 ---
@@ -290,9 +293,11 @@ cat ~/.ssh/id_ed25519.pub
 
 Select and copy the entire output (starts with `ssh-ed25519`).
 
-#### Add Key to GitHub
+#### Add Key to GitLab
 
-1. Go to **[github.com/settings/keys](https://github.com/settings/keys)**
+1. Go to your GitLab profile SSH keys page:
+   - GitLab.com: https://gitlab.com/-/profile/keys
+   - Self-managed: User Settings → **SSH Keys**
 2. Click **"New SSH key"**
 3. **Title:** Enter a descriptive name (e.g., "Work Laptop - December 2024")
 4. **Key type:** Keep as "Authentication Key"
@@ -302,11 +307,15 @@ Select and copy the entire output (starts with `ssh-ed25519`).
 #### Test Your Connection
 
 ```bash
-ssh -T git@github.com
+# GitLab.com
+ssh -T git@gitlab.com
+
+# Self-managed GitLab (example)
+# ssh -T git@gitlab.example.com
 ```
 
 {: .highlight }
-> **Expected output:** `Hi username! You've successfully authenticated, but GitHub does not provide shell access.`
+> **Expected output:** You should see a welcome/authentication message from GitLab.
 
 </details>
 
@@ -406,7 +415,7 @@ git config --global credential.helper
 # If credentials are corrupted, clear them
 # Open Windows Credential Manager:
 # Control Panel → User Accounts → Credential Manager → Windows Credentials
-# Find and remove entries starting with "git:" or "github"
+# Find and remove entries starting with "git:" or entries related to your GitLab host
 
 # Then reconfigure
 git config --global credential.helper manager
@@ -473,7 +482,7 @@ Before moving on, verify you've completed each step:
 - [ ] VS Code installed and `code .` opens it
 - [ ] GitLens extension installed
 - [ ] Git configured with your name and email
-- [ ] Successfully authenticated with GitHub (HTTPS or SSH)
+- [ ] Successfully authenticated with GitLab (HTTPS or SSH)
 - [ ] Cloned a test repository successfully
 
 ---
@@ -492,7 +501,7 @@ Congratulations! Your Windows environment is ready for Git. 🎉
 | Resource | Link |
 |----------|------|
 | Git Documentation | [git-scm.com/doc](https://git-scm.com/doc) |
-| GitHub Docs | [docs.github.com](https://docs.github.com) |
+| GitLab Docs | [docs.gitlab.com](https://docs.gitlab.com) |
 | VS Code Git Guide | [code.visualstudio.com/docs/sourcecontrol/overview](https://code.visualstudio.com/docs/sourcecontrol/overview) |
 | Interactive Git Tutorial | [learngitbranching.js.org](https://learngitbranching.js.org/) |
 

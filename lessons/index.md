@@ -20,8 +20,8 @@ Welcome to the Intro to Git training! Work through the lessons below in order to
 | [Lesson 1 — Getting Set Up](01_intro.md) | Verify Git, configure identity, get help, create a repo | 20 min |
 | [Lesson 2 — Local Commits](02_local_commits.md) | Stage, commit, review changes, and explore history | 20-25 min |
 | [Lesson 3 — Ignoring Things](03_ignoring_things.md) | Use `.gitignore` to keep noise out of commits | 10-15 min |
-| [Lesson 4 — Remotes (GitHub)](04_remotes_github.md) | Push/pull with GitHub and understand `origin` | 20-25 min |
-| [Lesson 5 — Branching & Pull Requests](05_branching_prs.md) | Work on branches and merge via PRs | 25-30 min |
+| [Lesson 4 — Remotes (GitLab)](04_remotes_github.md) | Push/pull with GitLab and understand `origin` | 20-25 min |
+| [Lesson 5 — Branching & Merge Requests](05_branching_prs.md) | Work on branches and merge via MRs | 25-30 min |
 | [Lesson 6 — Merge Conflicts](06_merge_conflicts.md) | Resolve a simple conflict safely | 20-25 min |
 
 {: .note }
