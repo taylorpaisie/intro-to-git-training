@@ -23,7 +23,7 @@ parent: Lessons
 |-------------|---------|
 | 💻 **Admin Access** | Administrator rights to install software, or IT pre-approval |
 | 🌐 **Internet Connection** | Stable connection to download installers (~100 MB total) |
-| 👤 **GitLab Account** | Use your company GitLab account, or create one on [gitlab.com](https://gitlab.com/users/sign_up) |
+| 👤 **GitLab Account** | Use your company GitLab account on **https://gitlab.technomics.net** |
 | 📧 **Work Email** | You’ll use this for Git commits and GitLab |
 
 ---
@@ -246,11 +246,11 @@ This is the easiest method and works well with corporate proxies and firewalls.
 **Test it:**
 ```bash
 # Clone a repository you have access to (this will trigger authentication)
-# Example (GitLab.com):
-# git clone https://gitlab.com/<group-or-user>/<project>.git
+# Example (Technomics GitLab):
+# git clone https://gitlab.technomics.net/<group>/<project>.git
 
-# Example (self-managed GitLab):
-# git clone https://gitlab.example.com/<group>/<project>.git
+# Optional alternative (GitLab.com):
+# git clone https://gitlab.com/<group-or-user>/<project>.git
 ```
 
 ---
@@ -296,8 +296,8 @@ Select and copy the entire output (starts with `ssh-ed25519`).
 #### Add Key to GitLab
 
 1. Go to your GitLab profile SSH keys page:
-   - GitLab.com: https://gitlab.com/-/profile/keys
-   - Self-managed: User Settings → **SSH Keys**
+   - Technomics GitLab: https://gitlab.technomics.net/-/profile/keys
+   - (Optional) GitLab.com: https://gitlab.com/-/profile/keys
 2. Click **"New SSH key"**
 3. **Title:** Enter a descriptive name (e.g., "Work Laptop - December 2024")
 4. **Key type:** Keep as "Authentication Key"
@@ -307,11 +307,11 @@ Select and copy the entire output (starts with `ssh-ed25519`).
 #### Test Your Connection
 
 ```bash
-# GitLab.com
-ssh -T git@gitlab.com
+# Technomics GitLab
+ssh -T git@gitlab.technomics.net
 
-# Self-managed GitLab (example)
-# ssh -T git@gitlab.example.com
+# Optional alternative (GitLab.com)
+# ssh -T git@gitlab.com
 ```
 
 {: .highlight }

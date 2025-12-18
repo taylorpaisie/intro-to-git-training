@@ -35,23 +35,21 @@ Most workflows name the primary remote `origin` by convention.
 
 ## Option A (recommended): Create a new GitLab repo and push
 
-1. In GitLab (gitlab.com or your company GitLab instance), create a new repository named `training-notes`.
+1. In GitLab (`gitlab.technomics.net`), create a new repository named `training-notes`.
    - Do **not** initialize with a README (you already have one locally).
 
 2. In your local `training-notes` folder, add the remote URL GitLab shows you:
 
 ```bash
-# HTTPS example (GitLab.com)
-# git remote add origin https://gitlab.com/<group-or-user>/training-notes.git
+# HTTPS example (Technomics GitLab)
+# git remote add origin https://gitlab.technomics.net/<group>/<project>.git
 
-# HTTPS example (self-managed GitLab)
-# git remote add origin https://gitlab.example.com/<group>/training-notes.git
+# SSH example (Technomics GitLab)
+# git remote add origin git@gitlab.technomics.net:<group>/<project>.git
 
-# SSH example (GitLab.com)
-# git remote add origin git@gitlab.com:<group-or-user>/training-notes.git
-
-# SSH example (self-managed GitLab)
-# git remote add origin git@gitlab.example.com:<group>/training-notes.git
+# If you ever work with GitLab.com too, the format is the same:
+# https://gitlab.com/<group-or-user>/training-notes.git
+# git@gitlab.com:<group-or-user>/training-notes.git
 ```
 
 3. Verify the remote:
