@@ -15,11 +15,13 @@ Welcome! This site guides today’s hands-on Git workshop.
 
 ## Agenda
 1. Why Git (version control in 10 minutes)
-2. Local workflow (`add`, `commit`, `log`)
-3. Remote basics (`clone`, `push`, `pull`)
-4. Branching & PRs
-5. Merge conflicts (you’ll do one!)
-6. Etiquette & Q&A
+2. Create a repository + first commit
+3. Local workflow (`status`, `diff`, `add`, `commit`, `log`)
+4. Ignoring files (`.gitignore`)
+5. Remote basics (`clone`, `push`, `pull`, `fetch`)
+6. Branching & PRs
+7. Merge conflicts (you’ll do one!)
+8. Etiquette & Q&A
 
 
 ## Lessons

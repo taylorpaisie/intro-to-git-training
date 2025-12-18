@@ -7,53 +7,52 @@ parent: Lessons
 
 # Lesson 1 — Getting Set Up
 
-**Goal:** Set up your Git environment, configure your development tools, and establish a connection with GitHub. This lesson will ensure you have everything you need to start version controlling your projects.
+{: .highlight }
+> **⏱️ Estimated Time:** 20 minutes
 
-## What is Git?
-
-Git is a distributed version control system that helps you track changes in your code, collaborate with others, and maintain a history of your project. It was created by Linus Torvalds in 2005 for developing the Linux kernel and has since become the standard for version control.
+**Goal:** Confirm Git is installed, set your identity, learn how to get help, and create your first local repository.
 
 ---
 
-## 1. Installing Required Tools
+## 🎯 Learning Objectives
 
-### Essential Tools
-- **Git:** [Download from git-scm.com](https://git-scm.com/downloads)
-- **VS Code (recommended):** [Download from code.visualstudio.com](https://code.visualstudio.com/)
+By the end of this lesson, you will be able to:
+- Explain (at a high level) what Git is and why teams use it
+- Configure your Git name/email
+- Use built-in Git help to look up commands
+- Create a repository and make an initial commit
 
-### Installation Tips
-- **Windows Users:**
-  - Accept "Git Credential Manager" during installation
-  - Choose "Use Visual Studio Code as Git's default editor" if prompted
-  - Select "Git from the command line and also from 3rd-party software"
-  - For line endings, choose "Checkout Windows-style, commit Unix-style"
+---
 
-- **macOS Users:**
-  - On first `git` use, macOS may prompt to install developer tools—allow it
-  - Install Homebrew (optional but recommended): `/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"`
-  - If using Homebrew: `brew install git`
+## What is Git (and what is GitHub)?
 
-- **Linux Users:**
-  - Ubuntu/Debian: `sudo apt-get update && sudo apt-get install git`
-  - Fedora: `sudo dnf install git`
+- **Git** is a version control tool that records changes over time.
+- **GitHub** is a hosting service for Git repositories (plus collaboration features like pull requests).
 
-## 2. Verifying Your Installation
+You can use Git entirely on your laptop. GitHub becomes relevant when you want to share, back up, or collaborate.
 
-Check that everything is installed correctly:
+---
+
+## 1. Verify your tools
+
+If you haven’t installed Git yet on a Windows work computer, start with the [Windows Setup Guide](00_windows_setup.md).
+
+Verify Git is available:
 
 ```bash
 # Check Git version
 git --version
-
-# Check VS Code version (if installed)
-code --version
-
-# Verify Git is in your PATH
-where git  # Windows
-which git  # macOS/Linux
 ```
 
-## 3. First-Time Git Configuration
+If you’re using VS Code, you can also check:
+
+```bash
+code --version
+```
+
+---
+
+## 2. First-time Git configuration
 
 Configure your identity (required for commits):
 
@@ -71,108 +70,81 @@ git config --global init.defaultBranch main
 git config --global core.editor "code --wait"
 ```
 
-### Optional but Recommended Configuration
+Check what you set:
+
+```bash
+git config --global --list
+```
+
+### Optional (nice defaults)
 
 ```bash
 # Enable colorful Git output
 git config --global color.ui auto
-
-# Set up git to use VS Code for diffs
-git config --global diff.tool vscode
-git config --global difftool.vscode.cmd "code --wait --diff $LOCAL $REMOTE"
-
-# Configure line ending behavior
-git config --global core.autocrlf true  # Windows
-git config --global core.autocrlf input # macOS/Linux
 ```
 
-## 4. Setting up GitHub Authentication
+---
 
-### Using SSH (Recommended)
+## 3. Getting help (you’ll use this constantly)
 
-1. Check for existing SSH keys:
+Git ships with built-in documentation:
+
 ```bash
-ls -la ~/.ssh
+# General help
+git help
+
+# Help for a specific command
+git help status
+
+# Short help (flags/summary)
+git status -h
 ```
 
-2. Generate a new SSH key if needed:
+---
+
+## 4. Create your first repository
+
+In a folder where you keep projects, create a new directory and initialize Git:
+
 ```bash
-ssh-keygen -t ed25519 -C "your.email@example.com"
-```
-
-3. Start the SSH agent:
-```bash
-# Windows (PowerShell)
-Get-Service ssh-agent | Set-Service -StartupType Automatic
-Start-Service ssh-agent
-
-# macOS/Linux
-eval "$(ssh-agent -s)"
-```
-
-4. Add your SSH key to the agent:
-```bash
-ssh-add ~/.ssh/id_ed25519
-```
-
-5. Copy your public key:
-```bash
-# Windows (PowerShell)
-Get-Content ~/.ssh/id_ed25519.pub | Set-Clipboard
-
-# macOS
-pbcopy < ~/.ssh/id_ed25519.pub
-
-# Linux
-xclip -sel clip < ~/.ssh/id_ed25519.pub
-```
-
-6. Add the key to your GitHub account:
-   - Go to GitHub → Settings → SSH and GPG keys
-   - Click "New SSH key"
-   - Paste your key and save
-
-### Using Git Credential Manager (Alternative)
-
-If you accepted Git Credential Manager during installation, it should work automatically when you first interact with GitHub.
-
-## 5. Verifying GitHub Connection
-
-Test your SSH connection:
-```bash
-ssh -T git@github.com
-```
-
-You should see a message like: "Hi username! You've successfully authenticated..."
-
-## 6. Installing Useful VS Code Extensions
-
-Open VS Code and install these recommended extensions:
-- GitLens
-- Git History
-- Git Graph
-
-To install from the command line:
-```bash
-code --install-extension eamodio.gitlens
-code --install-extension donjayamanne.githistory
-code --install-extension mhutchie.git-graph
-```
-
-## 7. Verify Everything Works
-
-1. Create a test repository:
-```bash
-mkdir git-test
-cd git-test
+mkdir training-notes
+cd training-notes
 git init
 ```
 
-2. Create and commit a test file:
+Check the state:
+
 ```bash
-echo "# Test Repository" > README.md
-git add README.md
-git commit -m "Initial commit"
+git status
 ```
 
-If these commands work without errors, you're ready to start using Git!
+Create a file and make your first commit:
+
+```bash
+echo "# Training Notes" > README.md
+git add README.md
+git commit -m "Add README"
+```
+
+---
+
+## ✅ Lesson Checklist
+
+- [ ] `git --version` works
+- [ ] `git config --global user.name` and `user.email` are set
+- [ ] You can use `git help <command>` to look things up
+- [ ] You created a repository and made a commit
+
+---
+
+## 🎯 Next Steps
+
+Continue to [Lesson 2 — Local Commits](02_local_commits.md) to practice staging, reviewing changes, and reading history.
+
+---
+
+## Attribution / further reading
+
+This workshop’s flow is inspired by Software Carpentry’s Git Novice lesson. If you want a deeper self-paced version, it’s excellent:
+
+- https://swcarpentry.github.io/git-novice/

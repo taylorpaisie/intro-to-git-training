@@ -19,6 +19,7 @@ nav_order: 2
 By the end of this lesson, you will be able to:
 - Explain what a commit is and why it's important
 - Use the staging area to prepare changes
+- Review changes with `git diff` before committing
 - Write clear, meaningful commit messages
 - View and navigate your commit history
 
@@ -32,7 +33,7 @@ Each commit records:
 
 | Component | Description | Example |
 |-----------|-------------|---------|
-| **Changes** | What files were modified, added, or deleted | `attendees.md` modified |
+| **Changes** | What files were modified, added, or deleted | `README.md` modified |
 | **Author** | Who made the changes | `Taylor Paisie <taylor@example.com>` |
 | **Timestamp** | When the changes were made | `Dec 17, 2024 10:30 AM` |
 | **Message** | A description of what changed | `Add Taylor to attendees list` |
@@ -70,13 +71,23 @@ Before diving into commits, it's essential to understand Git's three main areas:
 
 ## 📝 Step-by-Step: Making Your First Commit
 
+{: .important }
+This lesson assumes you created the `training-notes` repository in Lesson 1. If not, go back and complete Lesson 1 first.
+
 ### Step 1: Make Changes to Your Project
 
 First, let's modify a file:
 
-1. Open `attendees.md` in VS Code
-2. Add your name to the list of attendees
-3. Save the file (`Ctrl+S`)
+1. Open `README.md` in VS Code
+2. Add a short section like this:
+
+```markdown
+## Notes
+
+- Today I learned what a commit is.
+```
+
+3. Save the file
 
 ### Step 2: Check Your Status
 
@@ -92,7 +103,7 @@ git status
 > On branch main
 > Changes not staged for commit:
 >   (use "git add <file>..." to update what will be committed)
->         modified:   attendees.md
+>         modified:   README.md
 > ```
 
 The output tells you:
@@ -104,7 +115,7 @@ The output tells you:
 Add your changes to the staging area:
 
 ```bash
-git add attendees.md
+git add README.md
 ```
 
 Now check the status again:
@@ -119,7 +130,7 @@ git status
 > On branch main
 > Changes to be committed:
 >   (use "git restore --staged <file>..." to unstage)
->         modified:   attendees.md
+>         modified:   README.md
 > ```
 
 The file is now **green** — it's staged and ready to commit!
@@ -129,7 +140,7 @@ The file is now **green** — it's staged and ready to commit!
 Save your staged changes to the repository:
 
 ```bash
-git commit -m "Add your-name to attendees list"
+git commit -m "Update README with notes"
 ```
 
 {: .highlight }
@@ -156,6 +167,20 @@ git commit -m "Add your-name to attendees list"
 
 {: .warning }
 > `git restore <file>` will **permanently discard** your uncommitted changes. Use with caution!
+
+---
+
+## 🔍 Review changes before you commit (`git diff`)
+
+`git status` tells you *what* changed. `git diff` shows you *exactly what lines* changed.
+
+```bash
+# Changes not staged yet
+git diff
+
+# Changes staged for the next commit
+git diff --staged
+```
 
 ---
 
@@ -233,7 +258,7 @@ git log --oneline
 {: .highlight }
 > **Example output:**
 > ```
-> a1b2c3d (HEAD -> main) Add Taylor to attendees list
+> a1b2c3d (HEAD -> main) Update README with notes
 > e4f5g6h Initial commit with project structure
 > i7j8k9l Add README with project description
 > ```
@@ -289,7 +314,7 @@ git log --grep="attendees"
 git log --author="Taylor"
 
 # Find commits that changed a specific file
-git log -- attendees.md
+git log -- README.md
 ```
 
 ---
@@ -314,6 +339,9 @@ Made an error? Git has you covered:
 | Add forgotten files to last commit | `git add <file>` then `git commit --amend --no-edit` |
 | Undo last commit (keep changes) | `git reset --soft HEAD~1` |
 | Undo last commit (discard changes) | `git reset --hard HEAD~1` ⚠️ |
+
+{: .warning }
+> If you already pushed a commit to a shared branch, prefer `git revert <hash>` instead of rewriting history.
 
 {: .warning }
 > `git reset --hard` **permanently deletes** uncommitted changes. Only use when you're sure you want to discard everything.
