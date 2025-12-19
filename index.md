@@ -1,11 +1,10 @@
 ---
-layout: splash
-title: Intro to Git Training 🚀
-permalink: /
-intro: 
-  - excerpt: "Hands-on Git & GitLab workshop covering version control, branching, and best practices."
+layout: default
+title: Home
+nav_order: 1
 ---
 
+# Intro to Git Training 🚀
 Welcome! This site guides today's hands-on Git workshop.
 
 ## Goals
@@ -26,8 +25,8 @@ Welcome! This site guides today's hands-on Git workshop.
 7. Merge conflicts (you'll do one!)
 8. Etiquette & Q&A
 
-## Lessons
 
+## Lessons
 {% assign lessons = site.lessons | sort: 'nav_order' %}
 <ul>
 {% for l in lessons %}

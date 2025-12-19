@@ -6,31 +6,26 @@ url: "https://taylorpaisie.github.io"   # no trailing slash
 baseurl: "/intro-to-git-training"       # repo name, leading slash
 
 # Theme
-remote_theme: mmistakes/minimal-mistakes
+remote_theme: just-the-docs/just-the-docs
 
 # GitHub Pages-required plugin for remote themes
 plugins:
   - jekyll-remote-theme
-  - jekyll-paginate
-  - jekyll-sitemap
-  - jekyll-gist
-  - jekyll-feed
-  - jekyll-include-cache
 
-# Minimal Mistakes options
-minimal_mistakes_skin: "dark"
+# Just the Docs options
+logo: /assets/img/logo.svg
+color_scheme: dark
+search_enabled: true
 
-# Site Author
-author:
-  name: Taylor Paisie
-  bio: "Git Training & DevOps"
+aux_links:
+  "View this site source":
+    - "https://github.com/taylorpaisie/intro-to-git-training"
 
-# Site Footer
-footer:
-  links:
-    - label: GitHub
-      icon: fab fa-fw fa-github
-      url: "https://github.com/taylorpaisie"
+# Navigation
+nav_external_links:
+  - title: Git Downloads
+    url: https://git-scm.com/downloads
+    hide_icon: false
 
 # Collections: lessons
 collections:
@@ -38,26 +33,9 @@ collections:
     output: true
     permalink: /:collection/:name
 
-# Sidebar navigation
-sidebar:
-  nav: "lessons"
-
-# Navigation
-navigation:
-  lessons:
-    - title: Lessons
-      children:
-        - title: Windows Setup
-          url: /lessons/00_windows_setup/
-        - title: Getting Set Up
-          url: /lessons/01_intro/
-        - title: Local Commits
-          url: /lessons/02_local_commits/
-        - title: Ignoring Things
-          url: /lessons/03_ignoring_things/
-        - title: Remotes (GitLab)
-          url: /lessons/04_remotes_github/
-        - title: Branching & MRs
-          url: /lessons/05_branching_prs/
-        - title: Merge Conflicts
-          url: /lessons/06_merge_conflicts/
+just_the_docs:
+  collections:
+    lessons:
+      name: Lessons
+      nav_exclude: false
+      sort_by: nav_order
