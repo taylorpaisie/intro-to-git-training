@@ -27,8 +27,9 @@ Welcome! This site guides today’s hands-on Git workshop.
 
 
 ## Lessons
+{% assign lessons = site.lessons | sort: 'nav_order' %}
 <ul>
-{% for l in site.lessons %}
+{% for l in lessons %}
   <li><a href="{{ l.url | relative_url }}">{{ l.title }}</a></li>
 {% endfor %}
 </ul>

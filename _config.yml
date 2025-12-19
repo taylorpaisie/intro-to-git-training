@@ -6,14 +6,36 @@ url: "https://taylorpaisie.github.io"   # no trailing slash
 baseurl: "/intro-to-git-training"       # repo name, leading slash
 
 # Theme
-remote_theme: andrewbanchich/forty-jekyll-theme
+remote_theme: just-the-docs/just-the-docs
 
 # GitHub Pages-required plugin for remote themes
 plugins:
   - jekyll-remote-theme
+
+# Just the Docs options
+logo: /assets/img/logo.svg
+color_scheme: dark
+search_enabled: true
+
+aux_links:
+  "View this site source":
+    - "https://github.com/taylorpaisie/intro-to-git-training"
+
+# Navigation
+nav_external_links:
+  - title: Git Downloads
+    url: https://git-scm.com/downloads
+    hide_icon: false
 
 # Collections: lessons
 collections:
   lessons:
     output: true
     permalink: /:collection/:name
+
+just_the_docs:
+  collections:
+    lessons:
+      name: Lessons
+      nav_exclude: false
+      sort_by: nav_order
