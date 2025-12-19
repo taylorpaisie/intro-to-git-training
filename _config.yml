@@ -1,41 +1,49 @@
 title: Intro to Git Training
-description: Hands-on Git & GitLab workshop
+subtitle: Hands-on Git & GitLab Workshop
+email: your-email@example.com
+description: A hands-on Git workshop covering version control, branching, merge conflicts, and best practices.
 
 # GitHub Pages URLs (project site)
-url: "https://taylorpaisie.github.io"   # no trailing slash
-baseurl: "/intro-to-git-training"       # repo name, leading slash
+url: "https://taylorpaisie.github.io"
+baseurl: "/intro-to-git-training"
+
+# Site author info (optional)
+author:
+  street_address: 
+  city: 
+  state: 
+  zip_code: 
+  country: 
+  phone: 
 
 # Theme
-remote_theme: just-the-docs/just-the-docs
+remote_theme: andrewbanchich/forty-jekyll-theme
 
 # GitHub Pages-required plugin for remote themes
 plugins:
   - jekyll-remote-theme
 
-# Just the Docs options
-logo: /assets/img/logo.svg
-color_scheme: dark
-search_enabled: true
+# Homepage tiles configuration
+tiles-source: posts # pull tiles from posts (pages with layout: post)
+tiles-count: 10
 
-aux_links:
-  "View this site source":
-    - "https://github.com/taylorpaisie/intro-to-git-training"
+# Social settings (Font Awesome icons)
+socials:
+  GitHub: https://github.com/taylorpaisie
+  LinkedIn:
+  Twitter:
+  Facebook:
+  Instagram:
 
-# Navigation
-nav_external_links:
-  - title: Git Downloads
-    url: https://git-scm.com/downloads
-    hide_icon: false
+# Build settings
+markdown: kramdown
 
-# Collections: lessons
-collections:
-  lessons:
-    output: true
-    permalink: /:collection/:name
+sass:
+  style: compressed
 
-just_the_docs:
-  collections:
-    lessons:
-      name: Lessons
-      nav_exclude: false
-      sort_by: nav_order
+exclude:
+  - "*.gemspec"
+  - LICENSE.md
+  - CONTRIBUTING.md
+  - README.md
+  - lessons/
