@@ -11,3 +11,9 @@ remote_theme: andrewbanchich/forty-jekyll-theme
 # GitHub Pages-required plugin for remote themes
 plugins:
   - jekyll-remote-theme
+
+# Collections: lessons
+collections:
+  lessons:
+    output: true
+    permalink: /:collection/:name
