@@ -33,7 +33,27 @@ Branches let you:
 
 ---
 
-## Create a branch
+## Branch Naming Conventions
+
+Use descriptive names that explain the work. Your team's convention might look like:
+
+```
+feature/<feature-name>    — New features
+bugfix/<bug-name>         — Bug fixes
+docs/<topic>              — Documentation updates
+refactor/<area>           — Code refactoring
+experiment/<idea>         — Experimental/throwaway branches
+```
+
+Examples:
+```bash
+git switch -c feature/user-authentication
+git switch -c bugfix/login-timeout
+git switch -c docs/api-reference
+```
+
+{: .note }
+> Use lowercase, hyphens (not underscores), and keep names short but descriptive. Avoid timestamps or issue numbers in the branch name (use GitLab issue links in the MR description instead).
 
 From your `training-notes` repository:
 
@@ -82,6 +102,25 @@ git commit -m "Add agenda to README"
 ```bash
 git push -u origin add-agenda
 ```
+
+The `-u` (upstream) flag tells Git to remember this branch is tracked to `origin/add-agenda`. Future pushes can be just `git push`.
+
+{: .note }
+> **Forgot the `-u`?** No problem. Git will tell you what to do. You can also manually set upstream with `git branch --set-upstream-to=origin/add-agenda`.
+
+### Check upstream tracking
+
+```bash
+# See which local branches track which remotes
+git branch -vv
+```
+
+{: .highlight }
+> **Example output:**
+> ```
+> main                    a1b2c3d [origin/main] Initial commit
+> add-agenda              e4f5g6h [origin/add-agenda] Add agenda to README
+> ```
 
 ---
 

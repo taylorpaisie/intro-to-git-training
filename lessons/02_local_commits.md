@@ -152,6 +152,17 @@ git commit -m "Update README with notes"
 
 🎉 **Congratulations!** You've made your first commit!
 
+{: .warning }
+> **Oops! I forgot to `git add`!** If you commit and realize you forgot to stage files, no problem:
+> ```bash
+> # Check what was committed
+> git log --oneline -1
+> 
+> # Only some files were committed? Stage the missing ones and do:
+> git add <forgotten-file>
+> git commit --amend --no-edit
+> ```
+
 ---
 
 ## 🔧 Staging Commands Reference
@@ -175,12 +186,38 @@ git commit -m "Update README with notes"
 `git status` tells you *what* changed. `git diff` shows you *exactly what lines* changed.
 
 ```bash
-# Changes not staged yet
+# Changes not staged yet (in working directory)
 git diff
 
 # Changes staged for the next commit
 git diff --staged
 ```
+
+### Understanding `git diff` Output
+
+When you run `git diff`, you'll see output like this:
+
+```diff
+diff --git a/README.md b/README.md
+index abc1234..def5678 100644
+--- a/README.md
++++ b/README.md
+@@ -5,3 +5,8 @@ My Project
+ Some description here.
+ 
+-Old line that was deleted
++New line that was added
++Another new line
+```
+
+| Line Prefix | Meaning |
+|-------------|---------|
+| `-` (red) | Line was removed |
+| `+` (green) | Line was added |
+| (no prefix) | Line unchanged (context) |
+| `@@` | Section header showing line numbers |
+
+**Tip:** Always review `git diff` before staging. It catches mistakes early.
 
 ---
 
@@ -262,6 +299,21 @@ git log --oneline
 > e4f5g6h Initial commit with project structure
 > i7j8k9l Add README with project description
 > ```
+
+{: .note }
+> Use `git log --oneline` by default — it's fast and readable. Use full `git log` when you need more detail about specific commits.
+
+### Common Shortcuts for Commit Messages & Staging
+
+| Shortcut | What It Does | When to Use |
+|----------|--------------|------------|
+| `git commit -a -m "msg"` | Stage **tracked** files + commit in one step | Simple, single-file changes |
+| `git commit -am "msg"` | Same as above (shorthand) | Small, obvious changes only |
+| `git log --oneline -n 5` | Show last 5 commits | Quick history check |
+| `git show HEAD` | Show details of last commit | Verify what you just committed |
+
+{: .warning }
+> `git commit -a` only stages files Git already knows about. **New files won't be included**. Always use `git status` first to check.
 
 ### Detailed History
 

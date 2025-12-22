@@ -23,6 +23,8 @@ Welcome to the Intro to Git training! Work through the lessons below in order to
 | [Lesson 4 — Remotes (GitLab)](04_remotes_github.md) | Push/pull with GitLab and understand `origin` | 20-25 min |
 | [Lesson 5 — Branching & Merge Requests](05_branching_prs.md) | Work on branches and merge via MRs | 25-30 min |
 | [Lesson 6 — Merge Conflicts](06_merge_conflicts.md) | Resolve a simple conflict safely | 20-25 min |
+| [Lesson 7 — Common Mistakes & Fixes](07_common_mistakes.md) | Safe recovery from common Git errors | 15-20 min |
+| [Glossary & Command Reference](08_glossary_reference.md) | Quick lookup for terms and commands | Reference |
 
 {: .note }
 > **New to Git?** Start with the Windows Setup Guide if you haven't installed Git yet, then proceed through the numbered lessons in order.

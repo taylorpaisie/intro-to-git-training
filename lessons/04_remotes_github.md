@@ -31,6 +31,24 @@ By the end of this lesson, you will be able to:
 
 Most workflows name the primary remote `origin` by convention.
 
+{: .note }
+> **`origin` is just a local name.** The real remote is the URL. You can have multiple remotes (`origin`, `upstream`, etc.), each with different URLs.
+
+---
+
+## HTTPS vs SSH
+
+Both work, but they differ in setup and workflow:
+
+| Method | Auth | Setup | Each Push/Pull |
+|--------|------|-------|---------------|
+| **HTTPS** | Username + Password (or token) | No extra setup needed | May prompt for password/token |
+| **SSH** | SSH key pair | One-time SSH key setup | No prompts (automatic with agent) |
+
+**Recommendation for most users:** Start with HTTPS if you're new (simpler), switch to SSH later when you're comfortable.
+
+**If you set up SSH in Lesson 1**, you can use the SSH URLs. Otherwise, use HTTPS.
+
 ---
 
 ## Option A (recommended): Create a new GitLab repo and push
@@ -105,6 +123,45 @@ git log --oneline --graph --all
 
 ```bash
 git pull
+```
+
+---
+
+## Troubleshooting Authentication & Common Errors
+
+### Authentication Errors
+
+| Error | Cause | Fix |
+|-------|-------|-----|
+| `fatal: Authentication failed` | Password is wrong, token expired, or key not loaded | For HTTPS: Use GitLab personal access token (not password). For SSH: Ensure SSH key is added to GitLab and `ssh-add` has loaded it. |
+| `error: the username/password you supplied is incorrect` | Credentials don't match GitLab account | Use `git config --unset credential.helper` to clear cached credentials, then try again with correct email/token. |
+| `Permission denied (publickey)` | SSH key not found or not authorized | Run `ssh -T git@gitlab.technomics.net` to test. Check that your SSH key is added to GitLab. |
+
+### Empty Remote Issues
+
+If you create an empty repository on GitLab without a README:
+
+```bash
+# First push may need to explicitly set upstream
+git push -u origin main
+
+# After that, git push alone works
+git push
+```
+
+If GitLab complains "repository is empty," it's expected. After you push, this message goes away.
+
+### Checking Remote Details
+
+```bash
+# See what remote is configured and its URL
+git remote -v
+
+# See more details about a remote
+git remote show origin
+
+# If you made a mistake with the URL:
+git remote set-url origin <new-url>
 ```
 
 ---

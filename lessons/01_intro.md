@@ -60,8 +60,8 @@ Configure your identity (required for commits):
 # Set your name
 git config --global user.name "Your Name"
 
-# Set your email (use the email you use in GitLab)
-git config --global user.email "your.email@example.com"
+# Set your email (use your work email / GitLab account email)
+git config --global user.email "your.email@technomics.net"
 
 # Set your default branch name
 git config --global init.defaultBranch main
@@ -69,6 +69,9 @@ git config --global init.defaultBranch main
 # Set your default editor (if using VS Code)
 git config --global core.editor "code --wait"
 ```
+
+{: .note }
+> **Which email should I use?** Use the email associated with your GitLab account (typically `firstname.lastname@technomics.net`). This ensures commits are linked to you on GitLab.
 
 Check what you set:
 
@@ -82,6 +85,34 @@ git config --global --list
 # Enable colorful Git output
 git config --global color.ui auto
 ```
+
+### Optional: Set up SSH for easier authentication
+
+If you plan to push/pull frequently, SSH is more convenient than HTTPS (no password prompts after initial setup).
+
+```bash
+# Generate a new SSH key (press Enter for default location)
+ssh-keygen -t ed25519 -C "your.email@technomics.net"
+
+# Add it to your SSH agent
+ssh-add ~/.ssh/id_ed25519
+```
+
+Then add the public key to your GitLab account at `https://gitlab.technomics.net/-/user_settings/ssh_keys`.
+
+{: .note }
+> **HTTPS vs SSH:** HTTPS is simpler initially but requires your password each time. SSH is more secure and convenient long-term. You can set up SSH now or after Lesson 4.
+
+---
+
+## Troubleshooting Setup Issues
+
+| Problem | Solution |
+|---------|----------|
+| `git: command not found` | Git isn't installed. See [Windows Setup Guide](00_windows_setup.md) |
+| `fatal: not a git repository` | You forgot to run `git init`. Do that in your project folder. |
+| `error: pathspec did not match` | Filename is wrong, or you're in the wrong directory. Check `pwd` and `ls`. |
+| SSH key errors | See "Set up SSH" section above, or use HTTPS as a temporary workaround. |
 
 ---
 
