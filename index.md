@@ -33,3 +33,7 @@ Welcome! This site guides today's hands-on Git workshop.
   <li><a href="{{ l.url | relative_url }}">{{ l.title }}</a></li>
 {% endfor %}
 </ul>
+
+## Separate Track: Git in Army Vantage
+
+Working in Palantir Foundry? Use the [Git in Army Vantage training track]({{ '/vantage/' | relative_url }}) for a browser-based Code Repositories workflow, a synthetic vehicle fielding lab, and team review practices. This track is separate from the Git/GitLab lessons above.
